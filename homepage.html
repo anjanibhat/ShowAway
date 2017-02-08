@@ -1,0 +1,67 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Shop Away!</title>
+    <meta name="viewport" content="width=device-width, intial-scale=1">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <link href='https://fonts.googleapis.com/css?family=Raleway:200italic,300,400,400italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+      xmlns="http://www.w3.org/1999/html"/>
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="bootstrap/js/jquery-3.1.0.js"></script>
+    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body style="background-color: #F7EFED;">
+<div style="background-color: #F7EFED;">
+   <nav class="navbar" style="background-color: #293249;">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <h3 style="color:white">Shopping Website</h3>
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#topNavBar">
+                         <span class="icon-bar"></span>
+                         <span class="icon-bar"></span>
+                         <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse" id="topNavBar" style="float:right">
+                     <ul class="nav navbar-nav">
+                        <li class="active">
+                            <a href="/items/new">
+                                 <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Add Item
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+    </nav>
+    <div class="container-fluid">
+        {% for k, v in items.iteritems() %}
+        <div class="row">
+            <div class="col-md-12">
+                <h2>{{ k }}</h2>
+            </div>
+        </div>
+        <div class="row">
+          <div class="co-md-12"></div>
+        </div>
+        <div class="row">
+        {% for i in v %}
+         <a href="/items/{{ i.id }}">
+            <div class="col-md-3">
+                <p>
+                    <img src = "{{ i.picture }}" height="200" width="300">
+                    <h5 style="text-align:center">{{ i.name }}</h5>
+                    <h6 style="text-align:center">{{ i.price }}</h6>
+                </p>
+            </div>
+         </a>
+        {% endfor %}
+        </div>
+        <div class="row">
+          <div class="co-md-12"></div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+</body>
+</html>

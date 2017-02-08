@@ -1,0 +1,55 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shop Away!</title>
+    <meta name="viewport" content="width=device-width, intial-scale=1">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <link href='https://fonts.googleapis.com/css?family=Raleway:200italic,300,400,400italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+      xmlns="http://www.w3.org/1999/html"/>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body style="background-color: #F7EFED;">
+<div class="container-fluid" style="background-color: #F7EFED;">
+     <nav class="navbar" style="background-color: #293249;">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <h3 style="color:white">Shopping Website</h3>
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#topNavBar">
+                         <span class="icon-bar"></span>
+                         <span class="icon-bar"></span>
+                         <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse" id="topNavBar" style="float:right">
+                     <ul class="nav navbar-nav">
+                        <li class="active">
+                            <a href="/items/{{ itemx.id }}/delete">
+                                 <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>Delete Item
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+    </nav>
+   <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-4">
+                <img src="{{ itemx.picture }}" height="500" width="300" >
+            </div>
+            <div class="col-md-4">
+                <h3>{{ itemx.name }}</h3>
+                <p>
+                   <h4>Price = {{ itemx.price }}</h6>
+                   <h4> Brand Name = {{ itemx.brand_name }}</h6>
+                   <h4> {{ itemx.description }}<h6>
+                   <a href="/items/{{ itemx.id }}/edit">Edit this Item</a>
+                </p>
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
